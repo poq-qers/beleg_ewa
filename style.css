@@ -3,17 +3,43 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 0;
+    background-color: #ffffff; /* Standard-Hintergrundfarbe */
+    color: #000000; /* Standard-Textfarbe */
+    
+}
+body.dark-mode {
+    background-color: rgb(73, 71, 71); /* Dark Mode Hintergrundfarbe */
+    color: #ffffff; /* Dark Mode Textfarbe */
+}
+body.dark-mode .warenkorb {
+    background-color: rgb(50, 50, 50); /* Dark Mode Hintergrundfarbe für den Warenkorb */
+    color: #ffffff; /* Dark Mode Textfarbe für den Warenkorb */
+}
+.dark-mode-button {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 .main {
     display: flex;
-    border: solid 1px black;
-    height: 908px;
+    height: 100vh;
     width: auto;
+    
 }
 .warenkorb {    
-    border: solid 1px black;
-    height: 908px;
-    width: 500px;
+    height: 100vh;
+    width: 25vw;
     margin-left: auto;
     visibility: hidden;
+    position: absolute;
+    top: auto;
+    right: 0 ;
+    background-color: #ffffff; /* Standard-Hintergrundfarbe */
+    opacity: 1;
+    border-radius: 15px;
+    padding: 10px;
 }

@@ -28,7 +28,22 @@ const app = new Vue({
         const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         const dateTime = "" + date + ' Uhrzeit: ' + time;
         this.timestamp = dateTime;
-      }
+      },
+      increaseQuantity(item) {
+        item.quantity++;
+      },
+      decreaseQuantity(item) {
+        if (item.quantity > 1) {
+          item.quantity--;
+        } else {
+          this.korb = this.korb.filter(korbItem => korbItem.id !== item.id);
+        }
+      },
+      toggleDarkMode() {
+        this.darkMode = !this.darkMode;
+        document.body.classList.toggle('dark-mode', this.darkMode);
+      },
+      
     },
     mounted() {
       setInterval(this.now, 1000);

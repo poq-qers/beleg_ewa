@@ -9,6 +9,9 @@
 </head>
 <body>
     <div id="app" class="main">
+      <button @click="toggleDarkMode" class="dark-mode-button">
+        🌙
+      </button>
         <ul class="list-group list-group-flush">
           <li v-for="(product, index) in products" :key="product.id">
             Produkt: "{{ product.name }}" , 
@@ -20,9 +23,12 @@
         </ul>
 
         <div class="warenkorb" id="warenkorb">
+            <h2>Warenkorb</h2>
             <ul>
               <li v-for="item in korb" :key="item.id">
                 {{ item.name }} - {{ item.quantity }}
+                <button @click="increaseQuantity(item)">+</button>
+                <button @click="decreaseQuantity(item)">-</button>
               </li>
             </ul>
         </div>
